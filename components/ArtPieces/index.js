@@ -1,14 +1,9 @@
-import Image from "next/image";
-import useSWR from "swr";
+import ArtPiecePreview from "../ArtPiecePreview";
 
 export default function ArtPieces() {
-  const { data } = useSWR("https://example-apis.vercel.app/api/art");
-
   return (
-    <>
-      <ul>
-        <li>test</li>
-      </ul>
-    </>
+    <ul>
+      <ArtPiecePreview></ArtPiecePreview>;
+    </ul>
   );
 }
