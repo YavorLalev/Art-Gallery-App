@@ -1,18 +1,17 @@
-import Image from "next/image";
-import useSWR from "swr";
+import ArtPieces from "../ArtPieces";
 
-export default function ArtPiecePreview() {
-  const { data } = useSWR("https://example-apis.vercel.app/api/art");
-
+export default function ArtPiecePreview({ pieces }) {
   return (
     <>
-      {data &&
-        data.map((item) => (
-          <li key={item.name}>
-            <Image src={item.imageSource} width={200} height={200} alt="" />
-            {item.artist}
-          </li>
-        ))}
-    </>
-  );
-}
+      {pieces && (
+        <ul>
+          {pieces.map((piece) => (
+            <ArtPieces
+              key={piece.slug}
+              image={piece.imageSource}
+              name={piece.name}
+              artist={piece.artist}
+            ></ArtPieces>
+          ))}
+        </ul>
+      )}

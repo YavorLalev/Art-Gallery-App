@@ -1,9 +1,12 @@
-import ArtPiecePreview from "../ArtPiecePreview";
 
-export default function ArtPieces() {
+import Image from "next/image";
+
+export default function ArtPieces({ image, name, artist }) {
   return (
-    <ul>
-      <ArtPiecePreview></ArtPiecePreview>;
-    </ul>
-  );
-}
+    <>
+      <li>
+        <Image src={image} alt={name} width={200} height={200} />
+        <h3>{name}</h3>
+        <p>{artist}</p>
+      </li>
+    </>
