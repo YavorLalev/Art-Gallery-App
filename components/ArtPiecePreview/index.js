@@ -15,3 +15,6 @@ export default function ArtPiecePreview({ pieces }) {
           ))}
         </ul>
       )}
+    </>
+  );
+}
