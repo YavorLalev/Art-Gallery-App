@@ -1,14 +1,13 @@
 import Image from "next/image";
-import useSWR from "swr";
 
-export default function ArtPieces() {
-  const { data } = useSWR("https://example-apis.vercel.app/api/art");
-
+export default function ArtPieces({ image, name, artist }) {
   return (
     <>
-      <ul>
-        <li>test</li>
-      </ul>
+      <li>
+        <Image src={image} alt={name} width={200} height={200} />
+        <h3>{name}</h3>
+        <p>{artist}</p>
+      </li>
     </>
   );
 }
