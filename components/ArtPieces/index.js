@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 
 export default function ArtPieces({ image, name, artist }) {
@@ -9,5 +10,3 @@ export default function ArtPieces({ image, name, artist }) {
         <p>{artist}</p>
       </li>
     </>
-  );
-}
