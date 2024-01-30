@@ -1,6 +1,5 @@
 import Image from "next/image";
-import { StyledDiv } from "@/components/Spotlight/styles";
-import { StyledH3 } from "@/components/Spotlight/styles";
+import { StyledDiv, StyledH3 } from "@/components/Spotlight/styles";
 
 export default function Spotlight({ image, artist, name }) {
   return (
