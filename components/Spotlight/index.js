@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { StyledDiv, StyledH3 } from "@/components/Spotlight/styles";
 
-export default function Spotlight({ image, artist, name }) {
+export default function SpotlightPage({ image, artist, name }) {
   return (
     <StyledDiv>
       <Image src={image} alt={name} layout="fill" objectFit="cover"></Image>
@@ -9,12 +9,3 @@ export default function Spotlight({ image, artist, name }) {
     </StyledDiv>
   );
 }
-
-// export default function Spotlight({ image, artist, name }) {
-//     return (
-//       <div style={{ width: "100px", height: "100px" }}>
-//         <Image src={image} alt={name} fill style={{ objectFit: "cover" }}></Image>
-//         <h3>{artist}</h3>
-//       </div>
-//     );
-//   }

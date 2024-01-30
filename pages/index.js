@@ -1,6 +1,4 @@
-// import useSWR from "swr";
-import ArtPiecePreview from "@/components/ArtPiecePreview";
-import Spotlight from "@/components/Spotlight";
+import SpotlightPage from "@/components/Spotlight";
 import { getRandomImage } from "@/utils/getRandomArtPiece";
 
 export default function HomePage({ fetchPieces }) {
@@ -10,12 +8,11 @@ export default function HomePage({ fetchPieces }) {
     <div>
       <h1>Art Gallery</h1>
       {spotlightPiece && (
-        <Spotlight
+        <SpotlightPage
           artist={spotlightPiece.artist}
           image={spotlightPiece.imageSource}
-        ></Spotlight>
+        ></SpotlightPage>
       )}
-      <ArtPiecePreview pieces={fetchPieces}></ArtPiecePreview>
     </div>
   );
 }
