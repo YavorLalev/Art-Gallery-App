@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 export default function ArtPieces({ image, name, artist }) {
+  console.log(name);
   return (
     <>
       <li>
