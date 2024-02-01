@@ -11,6 +11,7 @@ export default function HomePage({ fetchPieces }) {
         <SpotlightPage
           artist={spotlightPiece.artist}
           image={spotlightPiece.imageSource}
+          name={spotlightPiece.name}
         ></SpotlightPage>
       )}
     </div>
