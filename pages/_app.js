@@ -3,29 +3,32 @@ import { SWRConfig } from "swr";
 import useSWR from "swr";
 import Layout from "@/components/Layout";
 
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
+const fetcher = async (url) => {
+  const res = await fetch(url);
 
+  if (!res.ok) {
+    const error = new Error("An Error occurred while fetching !!!");
+    error.info = await res.json();
+    error.status = res.status;
+    throw error;
+  }
+
+  return res.json();
+};
 export default function App({ Component, pageProps }) {
-  const { data, isLoading, error } = useSWR(
+  const { data, error, isLoading } = useSWR(
     "https://example-apis.vercel.app/api/art",
     fetcher
   );
 
-  if (!isLoading) {
-    <p>Loading...</p>;
-  }
-  if (!error) {
-    <p>404 error</p>;
-  }
-
+  if (error) return <p>{error.message}</p>;
+  if (isLoading) return <p>Loading.....</p>;
   return (
     <>
       <GlobalStyle />
-
-      <SWRConfig value={{ fetcher }}>
+      <SWRConfig value={fetcher}>
         <Layout>
-          {" "}
-          <Component fetchPieces={data} {...pageProps} />
+          <Component pieces={data} {...pageProps} />
         </Layout>
       </SWRConfig>
     </>
