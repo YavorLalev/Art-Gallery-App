@@ -13,7 +13,7 @@ export default function ArtPieceDetails({ image, title, artist, year, genre }) {
   return (
     <>
       <StyledSection>
-        <h2>{title}</h2>
+        <h2>"{title}"</h2>
         <h3>{artist}</h3>
         <Image src={image} alt={title} width={400} height={400} />
         <p>
