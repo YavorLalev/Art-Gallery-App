@@ -47,7 +47,7 @@ export default function ArtPiecePreview({ piece, image, title, artist }) {
   console.log("Test-Two", piece);
   return (
     <StyledSection>
-      <h2>"{title}"</h2>
+      <h2>{title}</h2>
       <h3>{artist}</h3>
       <HoverContainer>
         <Link href={`/art-pieces/${piece.slug}`}>
