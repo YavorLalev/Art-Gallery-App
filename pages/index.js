@@ -1,18 +1,21 @@
-import SpotlightPage from "@/components/Spotlight";
-import { getRandomImage } from "@/utils/getRandomArtPiece";
+import Spotlight from "@/components/Spotlight/index.js";
 
-export default function HomePage({ fetchPieces }) {
-  const spotlightPiece = fetchPieces ? getRandomImage(fetchPieces) : null;
+export default function SpotlightPage({ pieces }) {
+  const spotlightPiece = pieces ? getRandomImage(pieces) : null;
 
   return (
     <div>
-      <h1>Art Gallery</h1>
       {spotlightPiece && (
-        <SpotlightPage
-          artist={spotlightPiece.artist}
+        <Spotlight
           image={spotlightPiece.imageSource}
-        ></SpotlightPage>
+          artist={spotlightPiece.artist}
+          title={spotlightPiece.name}
+        ></Spotlight>
       )}
     </div>
   );
 }
+const getRandomImage = (pieces) => {
+  const randomIndex = Math.floor(Math.random() * pieces.length);
+  return pieces[randomIndex];
+};

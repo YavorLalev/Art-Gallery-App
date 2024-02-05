@@ -1,10 +1,9 @@
-import ArtPiecePreview from "@/components/ArtPiecePreview";
+import ArtPieces from "@/components/ArtPieces";
 
-export default function AllItemsPreview({ fetchPieces }) {
+export default function ArtPiecesPage({ pieces }) {
   return (
-    <div>
-      <h1>Art Gallery</h1>
-      <ArtPiecePreview pieces={fetchPieces}></ArtPiecePreview>
-    </div>
+    <>
+      <ArtPieces pieces={pieces} />
+    </>
   );
 }
