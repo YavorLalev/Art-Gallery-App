@@ -43,14 +43,15 @@ const HoverContainer = styled.div`
   }
 `;
 
-export default function ArtPiecePreview({ piece, image, title, artist }) {
-  console.log("Test-Two", piece);
+export default function ArtPiecePreview({ slug, image, title, artist }) {
   return (
     <StyledSection>
       <h2>{title}</h2>
-      <h3>{artist}</h3>
+      <h3>
+        <i>by {artist}</i>
+      </h3>
       <HoverContainer>
-        <Link href={`/art-pieces/${piece.slug}`}>
+        <Link href={`/art-pieces/${slug}`}>
           <Image
             className="img"
             src={image}

@@ -10,8 +10,6 @@ const StyledList = styled.ul`
 `;
 
 export default function ArtPieces({ pieces }) {
-  console.log("Check", pieces);
-
   return (
     <div>
       <StyledList>
@@ -21,7 +19,7 @@ export default function ArtPieces({ pieces }) {
               artist={piece.artist}
               image={piece.imageSource}
               title={piece.name}
-              piece={piece}
+              slug={piece.slug}
             />
             {/* <StyledLink href={`/art-pieces/${piece.slug}`}>
               view more

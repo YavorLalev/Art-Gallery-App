@@ -1,4 +1,5 @@
 import Spotlight from "@/components/Spotlight/index.js";
+import FavoriteButton from "@/components/FavoriteButton";
 
 export default function SpotlightPage({ pieces }) {
   const spotlightPiece = pieces ? getRandomImage(pieces) : null;
